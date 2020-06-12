@@ -1,6 +1,16 @@
 #include "cmath"
 #include "iostream"
 
+/*Things to do:
+-Add dice function
+-Add race menu
+  -Design menu interface
+  -Add racial bonuses
+-Add class menu
+  -Design menu interface
+  -Add "Equipment"
+*/
+
 class Character
 {
 private:
