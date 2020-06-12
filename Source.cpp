@@ -246,7 +246,12 @@ void Race(Character& player)
     desc[8][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
     //Subraces
     desc[0][3] = "Subraces:\n\t>Hill Dwarf\n\t>Mountain Dwarf"; //Hill: WIS +1 & Hit Point Max +1 and +1/lvl | Mountain: STR +2 & proficiency with light and medium armor
-    desc[1][3] = "Subraces:\n\t>High Elves\n\t>Wood Elves\n\t>Dark Elves/Drow"; //Drow have Chaotic Evil tendencies
+    desc[1][3] = "Subraces:\n\t>High Elves\n\t>Wood Elves\n\t>Dark Elves/Drow";
+    /*High: INT +1 & Proficiency with longsword, shortsword, shortbow, and longbow & One Cantrip of choice from Wizard spell list w/ INT as spellcasting ability
+    & Add one more language of choice| Wood:  WIS +1 & Proficiency with longsword, shortsword, shortbow, and longbow & Increased speed to 35ft & You can attempt
+    to hide when lightly obscured with foilage and other natural phenomena|Drow have Chaotic Evil tendencies & CHA +1 & Darkvision with radius 120 ft &
+    Disadvantage on attack rolls and perception checks that relly on sight when you or objective is in direct sunlight & You know Dancing lights cantrip lvl1, Faerie fire can be cast once
+    per day at and beyond lvl3, @ lvl5 darkness spell can be cast once per day, CHA is spellcasting ability for all of these & Proficiency with rapiers, shortswords, and hand crossbows*/
     desc[2][3] = "Subraces:";
     desc[3][3] = "Subraces:";
     desc[4][3] = "Subraces:";
