@@ -1,6 +1,7 @@
 #include "cmath"
 #include "iostream"
 #include "ctime"
+#include "stdlib.h"
 
 //Using the handbook in this link to create this program: https://online.anyflip.com/ofsj/cxmj/mobile/index.html
 
@@ -11,11 +12,13 @@
 -Add class menu
   -Design menu interface
   -Add "Equipment"
+-Add a Show() function that displays the character's info
 */
 
 //function prototypes
 int Dice(int side);
 void CreateCharacter(Character &player);
+void Race(Character &player);
 
 class Character
 {
@@ -67,6 +70,37 @@ public:
   {
     this->charisma = charisma;
     chaMod = floor((charisma-10)/2);
+  }
+  //Add functions for stats to add racial bonuses
+  void AddStr(int strength)
+  {
+    this->strength += strength;
+    strMod = floor((this->strength-10)/2); //rounds down
+  }
+  void AddDex(int dexterity)
+  {
+    this->dexterity += dexterity;
+    dexMod = floor((this->dexterity-10)/2);
+  }
+  void AddCon(int constitution)
+  {
+    this->constitution += constitution;
+    conMod = floor((this->constitution-10)/2);
+  }
+  void AddInt(int intelligence)
+  {
+    this->intelligence += intelligence;
+    intMod = floor((this->intelligence-10)/2);
+  }
+  void AddWis(int wisdom)
+  {
+    this->wisdom += wisdom;
+    wisMod = floor((this->wisdom-10)/2);
+  }
+  void AddCha(int charisma)
+  {
+    this->charisma += charisma;
+    chaMod = floor((this->charisma-10)/2);
   }
   //Get functions for stats
   int GetStr(){return strength;}
@@ -152,5 +186,82 @@ void CreateCharacter(Character &player)
   std::cin >> input;
   player.SetName(input);
 
+  //Clearing the Console
+  std::cout << flush;
+  system("CLS");
 
+  //Race
+  std::cout << "Second, let's decide on a race\n";
+  Race(player);
+
+  //Class
+
+  //Stats
+}
+
+//Race decider function
+void Race(Character &player)
+{
+  //pointer which will contain all the descriptions of each race
+  std::string *desc = new std::string[9][5];
+  {
+    //For Races with subraces add an option in selection to decide on specific subrace
+    //Race Names
+    desc[0][0] = "Dwarf"    //Has Subraces
+    desc[1][0] = "Elf"      //Has Subraces
+    desc[2][0] = "Halfling" //Has Subraces
+    desc[3][0] = "Human"
+    desc[4][0] = "Dragonborn"
+    desc[5][0] = "Gnome"    //Has Subraces
+    desc[6][0] = "Half-Elf"
+    desc[7][0] = "Half-Orc"
+    desc[8][0] = "Tiefling"
+    //Race descriptions
+    desc[0][1] = "Lifespan: ~350 years\nAdult at: 50 years\nSize: 4 to 5 ft tall, ~150 lbs, Medium\nAlignment Tendencies: Lawful Good\nSpeed: 25ft\nLanguages:\n\t>Common\n\t>Dwarvish"
+    desc[1][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n"
+    desc[2][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n"
+    desc[3][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n"
+    desc[4][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n"
+    desc[5][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n"
+    desc[6][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n"
+    desc[7][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n"
+    desc[8][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n"
+    //Racial Bonuses
+    desc[0][2] = "STR: \nDEX: \nCON: +2\nINT: \nWIS: \nCHA: \n"
+    desc[1][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n"
+    desc[2][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n"
+    desc[3][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n"
+    desc[4][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n"
+    desc[5][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n"
+    desc[6][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n"
+    desc[7][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n"
+    desc[8][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n"
+    //Subraces
+    desc[0][3] = "Subraces:\n\t>Hill Dwarf\n\t>Mountain Dwarf"
+    desc[1][3] = "Subraces:"
+    desc[2][3] = "Subraces:"
+    desc[3][3] = "Subraces:"
+    desc[4][3] = "Subraces:"
+    desc[5][3] = "Subraces:"
+    desc[6][3] = "Subraces:"
+    desc[7][3] = "Subraces:"
+    desc[8][3] = "Subraces:"
+    //Racial additions
+    desc[0][4] = "-Speed not reduced by heavy armor.\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Advantage on saving throws against poison and resistance against poison damage.\n-Proficiency with battleaxe, handaxe, throwing hammer, and warhammer.\nProficiency in the tools of your choice:\n\t>smith\'s tools\n\t>brewer\'s supplies\n\t>mason\'s tools\n-Add double your proficiency bonus on history checks related to the origin of stonework.\n-Hard consonants and guttural sounds spill over to whatever language a Dwarf tries to speak.\n"
+    desc[1][4] = ""
+    desc[2][4] = ""
+    desc[3][4] = ""
+    desc[4][4] = ""
+    desc[5][4] = ""
+    desc[6][4] = ""
+    desc[7][4] = ""
+    desc[8][4] = ""
+  }
+
+
+
+
+
+  //deleting pointer array
+  delete[] desc;
 }
