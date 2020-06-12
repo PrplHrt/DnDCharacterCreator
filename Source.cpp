@@ -104,3 +104,10 @@ public:
     SetCha(15);
   }
 }
+
+int main()
+{
+
+
+  return 0;
+}
