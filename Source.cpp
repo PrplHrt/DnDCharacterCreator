@@ -143,6 +143,7 @@ public:
         SetCha(15);
     }
 };
+
 //function prototypes
 int Dice(int side);
 void CreateCharacter(Character& player);
