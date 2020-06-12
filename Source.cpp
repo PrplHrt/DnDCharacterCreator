@@ -1,6 +1,9 @@
 #include "cmath"
 #include "iostream"
 #include "ctime"
+
+//Using the handbook in this link to create this program: https://online.anyflip.com/ofsj/cxmj/mobile/index.html
+
 /*Things to do:
 -Add race menu
   -Design menu interface
@@ -12,6 +15,7 @@
 
 //function prototypes
 int Dice(int side);
+void CreateCharacter(Character &player);
 
 class Character
 {
@@ -120,7 +124,7 @@ int Dice(int side)
 {
   //result variable to output the result
   int result{0};
-  //Limit function to only allow 4, 6, 8, 10, 12, 20, 100 sided dies
+  //Limit function to only allow 4, 6, 8, 10, 12, 20, 100 sided die
   select(side)
   {
     case 4:
@@ -136,4 +140,17 @@ int Dice(int side)
     default:
       return 0;
   }
+}
+
+//CreateCharacter function that takes in character object and creates the Character
+void CreateCharacter(Character &player)
+{
+  std::string input;
+
+  //Setting the name of the Character
+  std::cout << "First, please name your character:\n";
+  std::cin >> input;
+  player.SetName(input);
+
+
 }
