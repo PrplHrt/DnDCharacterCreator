@@ -215,57 +215,63 @@ void Race(Character& player)
     //Create Text files with all this info and move the info to those, then replace the info here with directories which would then be called and displayed in the menu
     //For Races with subraces add an option in selection to decide on specific subrace
     //Race Names
-    desc[0][0] = "Dwarf";    //Has Subraces
-    desc[1][0] = "Elf";      //Has Subraces
-    desc[2][0] = "Halfling"; //Has Subraces
+    desc[0][0] = "Dwarf";       //Has Subraces
+    desc[1][0] = "Elf";         //Has Subraces
+    desc[2][0] = "Halfling";    //Has Subraces
     desc[3][0] = "Human";
-    desc[4][0] = "Dragonborn";
-    desc[5][0] = "Gnome";    //Has Subraces
+    desc[4][0] = "Dragonborn";  //Add Detail for Dragonborn race breaths
+    desc[5][0] = "Gnome";       //Has Subraces
     desc[6][0] = "Half-Elf";
     desc[7][0] = "Half-Orc";
     desc[8][0] = "Tiefling";
     //Race descriptions
     desc[0][1] = "Lifespan: ~350 years\nAdult at: 50 years\nSize: 4 to 5 ft tall, ~150 lbs, Medium\nAlignment Tendencies: Lawful Good\nSpeed: 25ft\nLanguages:\n\t>Common\n\t>Dwarvish";
     desc[1][1] = "Lifespan: ~750 years\nAdult at: ~100 years\nSize: 5 to 6 ft tall, Slender, Medium\nAlignment Tendencies: Chaotic Good\nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Elvish";
-    desc[2][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
-    desc[3][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
-    desc[4][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
-    desc[5][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
+    desc[2][1] = "Lifespan: ~150 years\nAdult at: 20 years\nSize: ~3 ft tall, ~40 lbs, Small\nAlignment Tendencies: Lawful Good\nSpeed: 25ft\nLanguages:\n\t>Common\n\t>Halfling";
+    desc[3][1] = "Lifespan: ~80 years\nAdult at: ~20 years\nSize: 5 to 6+ ft tall, Vary, Medium\nAlignment Tendencies: None\nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Any Other Language"; //Should add a choice later on for human's additional language
+    desc[4][1] = "Lifespan: ~80 years\nAdult at: 15 years\nSize: 6+ ft tall, ~250 pounds, Medium\nAlignment Tendencies: Either Good or Bad\nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Draconic";
+    desc[5][1] = "Lifespan: 350-500 years\nAdult at: 40 years\nSize: 3 to 4 ft tall, ~40 lbs, Small\nAlignment Tendencies: Good (Lawful or Chaotic based on profession)\nSpeed: 25ft\nLanguages:\n\t>Common\n\t>Gnomic";
     desc[6][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
     desc[7][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
     desc[8][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
     //Racial Bonuses
     desc[0][2] = "STR: \nDEX: \nCON: +2\nINT: \nWIS: \nCHA: \n";
     desc[1][2] = "STR: \nDEX: +2\nCON: \nINT: \nWIS: \nCHA: \n";
-    desc[2][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
-    desc[3][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
-    desc[4][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
-    desc[5][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
+    desc[2][2] = "STR: \nDEX: +2\nCON: \nINT: \nWIS: \nCHA: \n";
+    desc[3][2] = "STR: +1\nDEX: +1\nCON: +1\nINT: +1\nWIS: +1\nCHA: +1\n";
+    desc[4][2] = "STR: +2\nDEX: \nCON: \nINT: \nWIS: \nCHA: +1\n";
+    desc[5][2] = "STR: \nDEX: \nCON: \nINT: +2\nWIS: \nCHA: \n";
     desc[6][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
     desc[7][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
     desc[8][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
     //Subraces
-    desc[0][3] = "Subraces:\n\t>Hill Dwarf\n\t>Mountain Dwarf"; //Hill: WIS +1 & Hit Point Max +1 and +1/lvl | Mountain: STR +2 & proficiency with light and medium armor
-    desc[1][3] = "Subraces:\n\t>High Elves\n\t>Wood Elves\n\t>Dark Elves/Drow";
+    desc[0][3] = "Subraces:\n\t>Hill Dwarf\n\t>Mountain Dwarf";
+    //Hill: WIS +1 & Hit Point Max +1 and +1/lvl | Mountain: STR +2 & proficiency with light and medium armor
+    desc[1][3] = "Subraces:\n\t>High Elves\n\t>Wood Elves\n\t>Drow";
     /*High: INT +1 & Proficiency with longsword, shortsword, shortbow, and longbow & One Cantrip of choice from Wizard spell list w/ INT as spellcasting ability
     & Add one more language of choice| Wood:  WIS +1 & Proficiency with longsword, shortsword, shortbow, and longbow & Increased speed to 35ft & You can attempt
     to hide when lightly obscured with foilage and other natural phenomena|Drow have Chaotic Evil tendencies & CHA +1 & Darkvision with radius 120 ft &
     Disadvantage on attack rolls and perception checks that relly on sight when you or objective is in direct sunlight & You know Dancing lights cantrip lvl1, Faerie fire can be cast once
     per day at and beyond lvl3, @ lvl5 darkness spell can be cast once per day, CHA is spellcasting ability for all of these & Proficiency with rapiers, shortswords, and hand crossbows*/
-    desc[2][3] = "Subraces:";
-    desc[3][3] = "Subraces:";
-    desc[4][3] = "Subraces:";
-    desc[5][3] = "Subraces:";
+    desc[2][3] = "Subraces:\n\t>Lightfoot\n\t>Stout";
+    /*Lightfoot: CHA +1 & You can attempt to hide when you are obscured by a creature at least one size bigger than you |
+     Stout: CON +1 & Advantage on saving throws against poison and resistance against poison damage*/
+    desc[3][3] = "Subraces:\n\t>Normal\n\t>Variant";
+    /*Variant's replace Human's stats with any 2 stats gaining a +1, a proficiency in any skill of choice, and gain one feat of choice*/
+    desc[4][3] = "Subraces:\n\t>Black (Acid)\n\t>Blue (Lightning)\n\t>Brass (Fire)\n\t>Bronze (Lightning)\n\t>Copper (Acid)\n\t>Gold (Fire)\n\t>Green (Poison)\n\t>Red (Fire)\n\t>Silver (Cold)\n\t>White (Cold)";
+    desc[5][3] = "Subraces:\n\t>Forest Gnomes\n\t>Rock Gnomes";
+    /*Forest: DEX +1 & Minor Illusion cantrip is known and INT is spellcasting ability & Can communicate with small animals and beast with gestures
+     and sounds | Rock: CON +1 & Add twice proficiency bonus to any History checks on magical and technological items */
     desc[6][3] = "Subraces:";
     desc[7][3] = "Subraces:";
     desc[8][3] = "Subraces:";
     //Racial additions
     desc[0][4] = "-Speed not reduced by heavy armor.\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Advantage on saving throws against poison and resistance against poison damage.\n-Proficiency with battleaxe, handaxe, throwing hammer, and warhammer.\nProficiency in the tools of your choice:\n\t>smith\'s tools\n\t>brewer\'s supplies\n\t>mason\'s tools\n-Add double your proficiency bonus on history checks related to the origin of stonework.\n-Hard consonants and guttural sounds spill over to whatever language a Dwarf tries to speak.\n";
     desc[1][4] = "-Change names upon adulthood\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Proficiency in perception.\n-Advantage on saving throws against being charmed, and magic can't put you to sleep.\n-Does not sleep, instead can meditate for 4 hours and gains same benefit as 8 hours sleep.\n";
-    desc[2][4] = "";
+    desc[2][4] = "-When you roll a 1 on a roll, you can roll again and must take the new roll.\n-Advantage on saving thorws from beign frightened.\n-You can move through any space of a creature that's size is larger than yours.\n";
     desc[3][4] = "";
-    desc[4][4] = "";
-    desc[5][4] = "";
+    desc[4][4] = "-Dragonborn posses a breath attack and resistances that vary based on the chosen type";
+    desc[5][4] = "-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Advantage on all intelligence, charisma, and wisdom saving throws against magic";
     desc[6][4] = "";
     desc[7][4] = "";
     desc[8][4] = "";
