@@ -142,6 +142,12 @@ public:
         SetWis(8);
         SetCha(15);
     }
+
+    //A display functions
+    void Display()
+    {
+      std::cout << "Player Info:\n"<< std::endl << name  << std::endl << race << std::endl << Cclass << std::endl << GetStr() << std::endl << GetDex() << std::endl << GetCon() << std::endl << GetInt() << std::endl << GetWis() << std::endl << GetCha() << std::endl;
+    }
 };
 
 //function prototypes
@@ -153,9 +159,10 @@ int main()
 {
     //randomise based on time of system
     srand(time(NULL));
-
     Character player;
+
     Race(player);
+    player.Display();
     return 0;
 }
 
@@ -263,9 +270,9 @@ void Race(Character& player)
     /*Forest: DEX +1 & Minor Illusion cantrip is known and INT is spellcasting ability & Can communicate with small animals and beast with gestures
      and sounds | Rock: CON +1 & Add twice proficiency bonus to any History checks on magical and technological items & Tinker (ability to make a trinket
      with one of three functions should add more details */
-    desc[6][3] = "Subraces:";
-    desc[7][3] = "Subraces:";
-    desc[8][3] = "Subraces:";
+    desc[6][3] = "Subraces: N/A";
+    desc[7][3] = "Subraces: N/A";
+    desc[8][3] = "Subraces: N/A";
     //Racial additions
     desc[0][4] = "-Speed not reduced by heavy armor.\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Advantage on saving throws against poison and resistance against poison damage.\n-Proficiency with battleaxe, handaxe, throwing hammer, and warhammer.\nProficiency in the tools of your choice:\n\t>smith\'s tools\n\t>brewer\'s supplies\n\t>mason\'s tools\n-Add double your proficiency bonus on history checks related to the origin of stonework.\n-Hard consonants and guttural sounds spill over to whatever language a Dwarf tries to speak.";
     desc[1][4] = "-Change names upon adulthood\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Proficiency in perception.\n-Advantage on saving throws against being charmed, and magic can't put you to sleep.\n-Does not sleep, instead can meditate for 4 hours and gains same benefit as 8 hours sleep.";
@@ -278,8 +285,54 @@ void Race(Character& player)
     desc[8][4] = "-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Resistance to fire damage.\n-Know the Thaumaturgy cantrip at lvl 1, Hellish Rebuke can be casted once per day as a 2nd level spell, at lvl 3, and the Darkness spell once per day at lvl 5 (all with CHA as the spellcasting ability).";
 
 
-    for (int i{ 0 }; i <= 4; i++)
+    char input;
+    /*
+    N - next
+    P - previous
+    S - select
+    */
+    int i{0};
+    //Menu:
+    std::cout << "The following will be a description of several available races in D&D.\n";
+    system("pause");
+
+    while(input != 'S')
     {
-        std::cout << desc[0][i] << std::endl;
+      system("CLS");
+      std::cout << "Name: " << desc[i][0] << std::endl;
+      std::cout << "Basic Description:\n" << desc[i][1] <<std::endl;
+      std::cout << "Racial Bonuses:\n" << desc[i][2] << std::endl;
+      std::cout << desc[i][3] << std::endl;
+      std::cout << "Additonal Info:\n" << desc[i][4] << std::endl << std::endl;
+      std::cout << "Options:\n\t>N - next\n\t>P - previous\n\t>S - select\nInput: ";
+      std::cin >> input;
+
+      switch(input)
+      {
+        case 'N':
+          i++;
+          break;
+        case 'P':
+          i--;
+          break;
+        case 'S':
+          player.SetRace(desc[i][0]);
+          //Add details for Racial Bonuses
+          break;
+        default:
+          std::cout << "Invalid Entry\n";
+          //Add error handling
+      }
+
+      //To make sure the menu loops back instead of going out of bounds
+      if( i < 0 )
+      {
+        i = 8;
+      }
+      else if( i > 8 )
+      {
+        i = 0;
+      }
     }
+
 }
