@@ -228,22 +228,22 @@ void Race(Character& player)
     desc[0][1] = "Lifespan: ~350 years\nAdult at: 50 years\nSize: 4 to 5 ft tall, ~150 lbs, Medium\nAlignment Tendencies: Lawful Good\nSpeed: 25ft\nLanguages:\n\t>Common\n\t>Dwarvish";
     desc[1][1] = "Lifespan: ~750 years\nAdult at: ~100 years\nSize: 5 to 6 ft tall, Slender, Medium\nAlignment Tendencies: Chaotic Good\nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Elvish";
     desc[2][1] = "Lifespan: ~150 years\nAdult at: 20 years\nSize: ~3 ft tall, ~40 lbs, Small\nAlignment Tendencies: Lawful Good\nSpeed: 25ft\nLanguages:\n\t>Common\n\t>Halfling";
-    desc[3][1] = "Lifespan: ~80 years\nAdult at: ~20 years\nSize: 5 to 6+ ft tall, Vary, Medium\nAlignment Tendencies: None\nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Any Other Language"; //Should add a choice later on for human's additional language
+    desc[3][1] = "Lifespan: ~80 years\nAdult at: ~20 years\nSize: 5 to 6+ ft tall, Medium\nAlignment Tendencies: None\nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Any Other Language"; //Should add a choice later on for human's additional language
     desc[4][1] = "Lifespan: ~80 years\nAdult at: 15 years\nSize: 6+ ft tall, ~250 pounds, Medium\nAlignment Tendencies: Either Good or Bad\nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Draconic";
     desc[5][1] = "Lifespan: 350-500 years\nAdult at: 40 years\nSize: 3 to 4 ft tall, ~40 lbs, Small\nAlignment Tendencies: Good (Lawful or Chaotic based on profession)\nSpeed: 25ft\nLanguages:\n\t>Common\n\t>Gnomic";
-    desc[6][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
-    desc[7][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
-    desc[8][1] = "Lifespan: \nAdult at: \nSize: \nAlignment Tendencies: \nSpeed: \nLanguages: \n";
+    desc[6][1] = "Lifespan: ~180 years\nAdult at: 20 years\nSize: 5 to 6 ft tall, Human-like, Medium \nAlignment Tendencies: Chaotic\nSpeed: 30ft\nLanguages: \n\t>Common\n\t>Elvish\n\t>One more language of choice";
+    desc[7][1] = "Lifespan: ~75 years\nAdult at: 14 years\nSize: 5 to 6+ ft tall, ~190 lbs, Medium\nAlignment Tendencies: Chaotic Evil\nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Orc";
+    desc[8][1] = "Lifespan: ~80 years\nAdult at: ~20 years\nSize:  5 to 6+ ft tall, Human-like, Medium\nAlignment Tendencies: \nSpeed: 30ft\nLanguages:\n\t>Common\n\t>Infernal";
     //Racial Bonuses
-    desc[0][2] = "STR: \nDEX: \nCON: +2\nINT: \nWIS: \nCHA: \n";
-    desc[1][2] = "STR: \nDEX: +2\nCON: \nINT: \nWIS: \nCHA: \n";
-    desc[2][2] = "STR: \nDEX: +2\nCON: \nINT: \nWIS: \nCHA: \n";
-    desc[3][2] = "STR: +1\nDEX: +1\nCON: +1\nINT: +1\nWIS: +1\nCHA: +1\n";
-    desc[4][2] = "STR: +2\nDEX: \nCON: \nINT: \nWIS: \nCHA: +1\n";
-    desc[5][2] = "STR: \nDEX: \nCON: \nINT: +2\nWIS: \nCHA: \n";
-    desc[6][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
-    desc[7][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
-    desc[8][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: \n";
+    desc[0][2] = "STR: \nDEX: \nCON: +2\nINT: \nWIS: \nCHA: ";
+    desc[1][2] = "STR: \nDEX: +2\nCON: \nINT: \nWIS: \nCHA: ";
+    desc[2][2] = "STR: \nDEX: +2\nCON: \nINT: \nWIS: \nCHA: ";
+    desc[3][2] = "STR: +1\nDEX: +1\nCON: +1\nINT: +1\nWIS: +1\nCHA: +1";
+    desc[4][2] = "STR: +2\nDEX: \nCON: \nINT: \nWIS: \nCHA: +1";
+    desc[5][2] = "STR: \nDEX: \nCON: \nINT: +2\nWIS: \nCHA: ";
+    desc[6][2] = "STR: \nDEX: \nCON: \nINT: \nWIS: \nCHA: +2\nAnd +1 to any two other stats";
+    desc[7][2] = "STR: +2\nDEX: \nCON: +1\nINT: \nWIS: \nCHA: ";
+    desc[8][2] = "STR: \nDEX: \nCON: \nINT: +1\nWIS: \nCHA: +2";
     //Subraces
     desc[0][3] = "Subraces:\n\t>Hill Dwarf\n\t>Mountain Dwarf";
     //Hill: WIS +1 & Hit Point Max +1 and +1/lvl | Mountain: STR +2 & proficiency with light and medium armor
@@ -261,20 +261,21 @@ void Race(Character& player)
     desc[4][3] = "Subraces:\n\t>Black (Acid)\n\t>Blue (Lightning)\n\t>Brass (Fire)\n\t>Bronze (Lightning)\n\t>Copper (Acid)\n\t>Gold (Fire)\n\t>Green (Poison)\n\t>Red (Fire)\n\t>Silver (Cold)\n\t>White (Cold)";
     desc[5][3] = "Subraces:\n\t>Forest Gnomes\n\t>Rock Gnomes";
     /*Forest: DEX +1 & Minor Illusion cantrip is known and INT is spellcasting ability & Can communicate with small animals and beast with gestures
-     and sounds | Rock: CON +1 & Add twice proficiency bonus to any History checks on magical and technological items */
+     and sounds | Rock: CON +1 & Add twice proficiency bonus to any History checks on magical and technological items & Tinker (ability to make a trinket
+     with one of three functions should add more details */
     desc[6][3] = "Subraces:";
     desc[7][3] = "Subraces:";
     desc[8][3] = "Subraces:";
     //Racial additions
-    desc[0][4] = "-Speed not reduced by heavy armor.\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Advantage on saving throws against poison and resistance against poison damage.\n-Proficiency with battleaxe, handaxe, throwing hammer, and warhammer.\nProficiency in the tools of your choice:\n\t>smith\'s tools\n\t>brewer\'s supplies\n\t>mason\'s tools\n-Add double your proficiency bonus on history checks related to the origin of stonework.\n-Hard consonants and guttural sounds spill over to whatever language a Dwarf tries to speak.\n";
-    desc[1][4] = "-Change names upon adulthood\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Proficiency in perception.\n-Advantage on saving throws against being charmed, and magic can't put you to sleep.\n-Does not sleep, instead can meditate for 4 hours and gains same benefit as 8 hours sleep.\n";
-    desc[2][4] = "-When you roll a 1 on a roll, you can roll again and must take the new roll.\n-Advantage on saving thorws from beign frightened.\n-You can move through any space of a creature that's size is larger than yours.\n";
+    desc[0][4] = "-Speed not reduced by heavy armor.\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Advantage on saving throws against poison and resistance against poison damage.\n-Proficiency with battleaxe, handaxe, throwing hammer, and warhammer.\nProficiency in the tools of your choice:\n\t>smith\'s tools\n\t>brewer\'s supplies\n\t>mason\'s tools\n-Add double your proficiency bonus on history checks related to the origin of stonework.\n-Hard consonants and guttural sounds spill over to whatever language a Dwarf tries to speak.";
+    desc[1][4] = "-Change names upon adulthood\n-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Proficiency in perception.\n-Advantage on saving throws against being charmed, and magic can't put you to sleep.\n-Does not sleep, instead can meditate for 4 hours and gains same benefit as 8 hours sleep.";
+    desc[2][4] = "-When you roll a 1 on a roll, you can roll again and must take the new roll.\n-Advantage on saving thorws from beign frightened.\n-You can move through any space of a creature that's size is larger than yours.";
     desc[3][4] = "";
     desc[4][4] = "-Dragonborn posses a breath attack and resistances that vary based on the chosen type";
     desc[5][4] = "-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Advantage on all intelligence, charisma, and wisdom saving throws against magic";
-    desc[6][4] = "";
-    desc[7][4] = "";
-    desc[8][4] = "";
+    desc[6][4] = "-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Advantage on saving throws against being charmed, and magic can't put you to sleep.\n-Gain proficiency in n=any two skills of your choice.";
+    desc[7][4] = "-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Gain proficiency in the intimidation skill.\n-When dropping to 0 hit points but not killed outright, can drop to 1 hit point (Once after every long rest).\n-When hitting a critical hit with a melee weapon, roll one of the weapon's damage dice and add that as damage to the critical hit.";
+    desc[8][4] = "-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Resistance to fire damage.\n-Know the Thaumaturgy cantrip at lvl 1, Hellish Rebuke can be casted once per day as a 2nd level spell, at lvl 3, and the Darkness spell once per day at lvl 5 (all with CHA as the spellcasting ability).";
 
 
     for (int i{ 0 }; i <= 4; i++)
