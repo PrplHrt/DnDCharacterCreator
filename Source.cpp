@@ -195,12 +195,12 @@ int Dice(int side)
 //CreateCharacter function that takes in character object and creates the Character
 void CreateCharacter(Character& player)
 {
-    std::string input;
+    std::string name;
 
     //Setting the name of the Character
     std::cout << "First, please name your character:\n";
-    std::cin >> input;
-    player.SetName(input);
+    std::cin >> name;
+    player.SetName(name);
 
     //Clearing the Console
     system("CLS");
@@ -252,8 +252,8 @@ void Race(Character& player)
     desc[6][2] = "\tSTR: \n\tDEX: \n\tCON: \n\tINT: \n\tWIS: \n\tCHA: +2\n\tAnd +1 to any two other stats"; //Add option to select stat for additional bonus
     desc[7][2] = "\tSTR: +2\n\tDEX: \n\tCON: +1\n\tINT: \n\tWIS: \n\tCHA: ";
     desc[8][2] = "\tSTR: \n\tDEX: \n\tCON: \n\tINT: +1\n\tWIS: \n\tCHA: +2";
-    //Array that contains values for Racial Bonuses:
-    int bonus[9][6] = {{0,0,2,0,0,0},{0,2,0,0,0,0},{0,2,0,0,0,0},{1,1,1,1,1,1},{2,0,0,0,0,1},{0,0,0,2,0,0},{0,0,0,0,0,2},{2,0,1,0,0,0},{0,0,0,1,0,2}};
+      //Array that contains values for Racial Bonuses:
+      int bonus[9][6] = {{0,0,2,0,0,0},{0,2,0,0,0,0},{0,2,0,0,0,0},{1,1,1,1,1,1},{2,0,0,0,0,1},{0,0,0,2,0,0},{0,0,0,0,0,2},{2,0,1,0,0,0},{0,0,0,1,0,2}};
     //Subraces
     desc[0][3] = "Subraces:\n\t>Hill Dwarf\n\t>Mountain Dwarf";
     //Hill: WIS +1 & Hit Point Max +1 and +1/lvl | Mountain: STR +2 & proficiency with light and medium armor
@@ -287,19 +287,19 @@ void Race(Character& player)
     desc[7][4] = "-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Gain proficiency in the intimidation skill.\n-When dropping to 0 hit points but not killed outright, you can instead go to 1 hit point (Once after every long rest).\n-When achieving a critical hit with a melee weapon, roll one of the weapon's damage dice and add that as damage to the critical hit.";
     desc[8][4] = "-Has \"DarkVision\" and can see upto 60ft in dim light as though it was bright and in darkness as if it was dim. You can\'t discern colors in darkness.\n-Resistance to fire damage.\n-Know the Thaumaturgy cantrip at lvl 1, Hellish Rebuke can be casted once per day as a 2nd level spell, at lvl 3, and the Darkness spell once per day at lvl 5 (all with CHA as the spellcasting ability).";
 
-
-    char input;
+    //input for options at different stages
+    char racemenu, subracemenu;
     /*
     N - next
     P - previous
     S - select
     */
-    int i{0};
+    int i{0}, j{0};
     //Menu:
     std::cout << "The following will be a description of several available races in D&D.\n";
     system("pause");
 
-    while(input != 'S')
+    while(racemenu != 'S')
     {
       system("CLS");
       std::cout << "Name: " << desc[i][0] << std::endl;
@@ -308,12 +308,12 @@ void Race(Character& player)
       std::cout << desc[i][3] << std::endl;
       std::cout << "Additonal Info:\n" << desc[i][4] << std::endl << std::endl;
       std::cout << "Options:\n\t>N - next\n\t>P - previous\n\t>S - select\nInput: ";
-      std::cin >> input;
+      std::cin >> racemenu;
 
       //Allows for lowercase input of the prementioned options
-      input = toupper(input);
+      racemenu = toupper(racemenu);
 
-      switch(input)
+      switch(racemenu)
       {
         case 'N':
           i++;
@@ -335,6 +335,148 @@ void Race(Character& player)
           else
           {
             //Subraces go here
+            switch(i)
+            {
+              case 0:
+              //Dwarf
+                while(subracemenu != S)
+                {
+
+                  //Handles user input
+                  switch(subracemenu)
+                  {
+                    case 'N':
+                      j++;
+                      break;
+                    case 'P':
+                      j--;
+                      break;
+                    case 'S':
+                      break;
+                  }
+                  //Allows for looping
+                  if( i < 0 )
+                  {
+                    i = 1;
+                  }
+                  else if( i > 1 )
+                  {
+                    i = 0;
+                  }
+                }
+                break;
+              case 1:
+              //Elf
+
+                while(subracemenu != S)
+                {
+                  //Handles user input
+                  switch(subracemenu)
+                  {
+                    case 'N':
+                      j++;
+                      break;
+                    case 'P':
+                      j--;
+                      break;
+                    case 'S':
+                      break;
+                  }
+                  //Allows for looping
+                  if( i < 0 )
+                  {
+                    i = 2;
+                  }
+                  else if( i > 2 )
+                  {
+                    i = 0;
+                  }
+                }
+                break;
+              case 2:
+              //Halfling
+
+                while(subracemenu != S)
+                {
+                  //Handles user input
+                  switch(subracemenu)
+                  {
+                    case 'N':
+                      j++;
+                      break;
+                    case 'P':
+                      j--;
+                      break;
+                    case 'S':
+                      break;
+                  }
+                  //Allows for looping
+                  if( i < 0 )
+                  {
+                    i = 1;
+                  }
+                  else if( i > 1 )
+                  {
+                    i = 0;
+                  }
+                }
+                break;
+              case 3:
+              //Human
+
+                while(subracemenu != S)
+                {
+                  //Handles user input
+                  switch(subracemenu)
+                  {
+                    case 'N':
+                      j++;
+                      break;
+                    case 'P':
+                      j--;
+                      break;
+                    case 'S':
+                      break;
+                  }
+                  //Allows for looping
+                  if( i < 0 )
+                  {
+                    i = 1;
+                  }
+                  else if( i > 1 )
+                  {
+                    i = 0;
+                  }
+                }
+                break;
+              case 5:
+              //Gnome
+                while(subracemenu != S)
+                {
+                  //Handles user input
+                  switch(subracemenu)
+                  {
+                    case 'N':
+                      j++;
+                      break;
+                    case 'P':
+                      j--;
+                      break;
+                    case 'S':
+                      break;
+                  }
+                  //Allows for looping
+                  if( i < 0 )
+                  {
+                    i = 1;
+                  }
+                  else if( i > 1 )
+                  {
+                    i = 0;
+                  }
+                }
+                break;
+            }
           }
           break;
         default:
