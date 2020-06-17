@@ -1,3 +1,5 @@
+#include "myHeader.h"
+
 //Race decider function
 void Race(Character& player)
 {
